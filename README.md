@@ -37,7 +37,7 @@ These insights empower stakeholders with key business metrics, enabling strategi
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## 🌟 About Me
-Hello there! I am **Khaled Miri**, you can simply call me **Khaled** :D. I am Generalist Engineer with Mechanical Engineering backround with strong passion to coding and Data Engineering. My scientific, technical and analytical background from my Engineering curriculum path has made it easier for me to get into the real Data Engineering world. Willing to keep learning and working on Data Engineering projects ! 
+Hello there! I am **Khaled Miri**, you can simply call me **Khaled** :D. I am Generalist Engineer with Mechanical Engineering backround and strong passion to coding and Data Engineering. My scientific, technical and analytical background from my Engineering curriculum path has made it easier for me to get into the real Data Engineering world. Willing to keep learning and working on Data Engineering projects ! 
 
 Let's connect on LinkedIn and stay in touch ! 
 
