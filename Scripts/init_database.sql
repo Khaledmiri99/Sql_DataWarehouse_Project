@@ -13,30 +13,28 @@ WARNING:
     and ensure you have proper backups before running this script.
 */
 
-USE master;
-GO
-
 -- Drop and recreate the 'DataWarehouse' database
-IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
+-- First, disconnect any existing connections
+DO $$
 BEGIN
-    ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    DROP DATABASE DataWarehouse;
-END;
-GO
+   IF EXISTS (SELECT 1 FROM pg_database WHERE datname = 'DataWarehouse') THEN
+      -- Terminate connections to the database
+      PERFORM pg_terminate_backend(pid)
+      FROM pg_stat_activity
+      WHERE datname = 'DataWarehouse';
+      
+      -- Drop the database
+      EXECUTE 'DROP DATABASE DataWarehouse';
+   END IF;
+END$$;
 
 -- Create the 'DataWarehouse' database
-CREATE DATABASE DataWarehouse;
-GO
+CREATE DATABASE "DataWarehouse";
 
-USE DataWarehouse;
-GO
+-- Connect to the new database
+\c "DataWarehouse";
 
 -- Create Schemas
 CREATE SCHEMA bronze;
-GO
-
 CREATE SCHEMA silver;
-GO
-
 CREATE SCHEMA gold;
-GO
